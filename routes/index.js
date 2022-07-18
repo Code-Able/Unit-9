@@ -80,7 +80,7 @@ router.get('/users', authenticateUser, asyncHandler(async (req,res) => {
 // POST route that will create a new user and set the Location header to "/"
 router.post('/users', asyncHandler(async (req,res) => {
     try{
-        await User.create(req.body)
+        await User.create(req.body);
         //set location header to /
         res.status(201).location('/').end();
     } catch (error){
@@ -105,7 +105,7 @@ router.get('/courses', asyncHandler(async (req, res) => {
     const courses = await Course.findAll({
         include: [{
             model: User,
-            as: "User",
+            as: "user",
             attributes: ["firstName", "lastName"]
         }]
     });
@@ -127,7 +127,7 @@ router.get('/courses/:id', asyncHandler(async (req,res) => {
             },
             include: [{
                 model: User,
-                as: 'User',
+                as: 'user',
                 attributes: ['firstName', 'lastName']
             }]
         })
