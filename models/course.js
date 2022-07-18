@@ -33,12 +33,10 @@ module.exports = (sequelize) => {
         }
       },
       estimatedTime: {
-          type: DataTypes.STRING,
-          allowNull: false
+          type: DataTypes.STRING
         },
       materialsNeeded: {
-          type: DataTypes.STRING,
-          allowNull: false
+          type: DataTypes.STRING
         },
       id: {
         type: DataTypes.INTEGER,
