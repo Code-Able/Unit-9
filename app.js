@@ -15,6 +15,8 @@ const app = express();
 // setup morgan which gives us http request logging
 app.use(morgan('dev'));
 
+// JSON for parsing req.body
+app.use(express.json());
 
 //load routes
 const router = require('./routes/index');
